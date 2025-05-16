@@ -606,10 +606,7 @@ export default {
     showEmptySlot() {
       if (!this.paginated.length) return true;
 
-      if (
-        this.paginated[0].label === 'no groups' &&
-        !this.paginated[0].children.length
-      ) {
+      if (this.paginated[0].label === 'no groups' && !(this.paginated[0].children || []).length){
         return true;
       }
 
